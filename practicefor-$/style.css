@@ -1,0 +1,243 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0f0f0f;
+color:#fff;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+font-family:'Playfair Display';
+}
+
+.logo span{ color:#c9a227; }
+
+nav a{
+color:#fff;
+margin:0 15px;
+text-decoration:none;
+position:relative;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#c9a227;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.btn-primary,.btn{
+background:#c9a227;
+border:none;
+padding:10px 20px;
+cursor:pointer;
+color:#000;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-primary:hover{
+transform:scale(1.05);
+}
+
+.btn-outline{
+background:transparent;
+border:1px solid #c9a227;
+color:#fff;
+padding:10px 20px;
+cursor:pointer;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:url('./images/steak.jpg') center/cover;
+position:relative;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+max-width:700px;
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-family:'Playfair Display';
+font-size:52px;
+}
+
+.hero p{
+margin:20px 0;
+color:#ddd;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+justify-content:center;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:80px 60px;
+background:#111;
+}
+
+.feature{
+background:#1a1a1a;
+padding:30px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.feature:hover{
+transform:translateY(-10px);
+}
+
+.menu{
+padding:80px 60px;
+text-align:center;
+}
+
+.menu h2{
+font-family:'Playfair Display';
+font-size:40px;
+margin-bottom:40px;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:#1a1a1a;
+border-radius:12px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card .img{
+height:150px;
+background:url('./images/steak.jpg') center/cover;
+}
+
+.card h4{
+padding:10px;
+}
+
+.card span{
+color:#c9a227;
+padding-bottom:15px;
+display:block;
+}
+
+.story{
+padding:80px 60px;
+background:#0d0d0d;
+text-align:center;
+}
+
+.story p{
+max-width:700px;
+margin:auto;
+color:#bbb;
+}
+
+.testimonials{
+padding:80px 60px;
+text-align:center;
+background:#111;
+}
+
+.reviews{
+display:flex;
+gap:20px;
+margin-top:30px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.review{
+background:#1a1a1a;
+padding:20px;
+border-radius:10px;
+max-width:250px;
+transition:0.3s;
+}
+
+.review:hover{
+transform:translateY(-10px);
+}
+
+.cta{
+padding:80px 60px;
+text-align:center;
+background:#c9a227;
+color:#000;
+}
+
+footer{
+padding:20px;
+text-align:center;
+background:#000;
+}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:992px){
+.features{grid-template-columns:1fr;}
+.menu-grid{grid-template-columns:1fr 1fr;}
+.nav{flex-direction:column;}
+}
+
+@media(max-width:600px){
+.menu-grid{grid-template-columns:1fr;}
+.hero h1{font-size:32px;}
+}
